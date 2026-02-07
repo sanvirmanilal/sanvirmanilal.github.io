@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanvir Manilal | Senior Software Engineer</title>
+    <meta name="description"
+        content="Professional resume of Sanvir Manilal — Senior Software Engineer based in the Netherlands.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #1a1a2e;
+            --color-accent: #0f3460;
+            --color-highlight: #e94560;
+            --color-text: #2d2d2d;
+            --color-text-light: #5a5a5a;
+            --color-bg: #fafafa;
+            --color-card: #ffffff;
+            --color-border: #e8e8e8;
+            --color-section-bg: #f0f2f5;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-serif: 'IBM Plex Serif', Georgia, serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text);
+            background: var(--color-bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== HEADER / HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            color: #fff;
+            padding: 4rem 2rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--color-highlight);
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 2.75rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 1.25rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero .subtitle {
+            font-size: 1.15rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 2rem;
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+
+        .hero-contact a {
+            color: #fff;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            transition: border-color 0.2s;
+        }
+
+        .hero-contact a:hover {
+            border-color: var(--color-highlight);
+        }
+
+        .hero-contact .separator {
+            display: none;
+        }
+
+        /* ===== LANG TOGGLE ===== */
+        .lang-toggle {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.5rem;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #fff;
+            padding: 0.4rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: var(--font-sans);
+            letter-spacing: 0.04em;
+            transition: background 0.2s, border-color 0.2s;
+            z-index: 10;
+        }
+
+        .lang-toggle:hover {
+            background: rgba(255, 255, 255, 0.22);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ===== NAV ===== */
+        .nav {
+            background: var(--color-card);
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 0.25rem;
+            list-style: none;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .nav a {
+            display: block;
+            padding: 0.85rem 1.25rem;
+            color: var(--color-text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            transition: color 0.2s, box-shadow 0.2s;
+        }
+
+        .nav a:hover,
+        .nav a:focus {
+            color: var(--color-highlight);
+            box-shadow: inset 0 -2px 0 var(--color-highlight);
+        }
+
+        /* ===== MAIN LAYOUT ===== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 3rem 0;
+        }
+
+        section+section {
+            border-top: 1px solid var(--color-border);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 1.75rem;
+            position: relative;
+            padding-bottom: 0.6rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--color-highlight);
+            border-radius: 2px;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-content {
+            max-width: 720px;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--color-text-light);
+            margin-bottom: 1rem;
+        }
+
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-highlight {
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+
+        /* ===== EXPERIENCE TIMELINE ===== */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 0.5rem;
+            bottom: 0.5rem;
+            width: 2px;
+            background: var(--color-border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.25rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.45rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--color-card);
+            border: 2px solid var(--color-highlight);
+            z-index: 1;
+        }
+
+        .timeline-item:first-child::before {
+            background: var(--color-highlight);
+        }
+
+        .timeline-header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-role {
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: var(--color-primary);
+        }
+
+        .timeline-company {
+            font-weight: 500;
+            color: var(--color-accent);
+        }
+
+        .timeline-meta {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        .timeline-tech {
+            margin-top: 0.6rem;
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+
+        .timeline-tech strong {
+            color: var(--color-accent);
+            font-weight: 600;
+        }
+
+        .timeline-tech ul {
+            margin: 0.35rem 0 0 1.25rem;
+            padding: 0;
+            list-style: disc;
+        }
+
+        .timeline-tech ul li {
+            margin-bottom: 0.2rem;
+            line-height: 1.5;
+        }
+
+        /* ===== SKILLS / TAGS ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category h3 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--color-section-bg);
+            color: var(--color-text);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 400;
+            border: 1px solid var(--color-border);
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .tag:hover {
+            background: #e8eaf0;
+            border-color: var(--color-accent);
+        }
+
+        /* ===== CERTIFICATIONS ===== */
+        .cert-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+
+        .cert-card {
+            background: var(--color-card);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .cert-card:hover {
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            border-color: var(--color-accent);
+        }
+
+        .cert-card h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.15rem;
+        }
+
+        .cert-card p {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+        }
+
+        /* ===== EDUCATION ===== */
+        .edu-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .edu-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-item h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .edu-item .edu-school {
+            font-weight: 500;
+            color: var(--color-accent);
+            font-size: 0.95rem;
+        }
+
+        .edu-item .edu-dates {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+        }
+
+        /* ===== LANGUAGES ===== */
+        .lang-list {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .lang-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .lang-name {
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .lang-level {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--color-primary);
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: var(--color-highlight);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 640px) {
+            .hero {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 0 1.25rem;
+            }
+
+            .nav ul {
+                gap: 0;
+            }
+
+            .nav a {
+                padding: 0.75rem 0.75rem;
+                font-size: 0.75rem;
+            }
+
+            .timeline {
+                padding-left: 1.5rem;
+            }
+
+            .timeline-item::before {
+                left: -1.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== PRINT ===== */
+        @media print {
+            .nav {
+                display: none;
+            }
+
+            .hero {
+                background: #fff;
+                color: #000;
+                padding: 1rem 0;
+            }
+
+            .hero::after {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 1.5rem 0;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            body {
+                font-size: 11pt;
+            }
+
+            .footer {
+                display: none;
+            }
+        }
+
+        /* ===== DARK MODE ===== */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-primary: #e8e8f0;
+                --color-accent: #7eb8da;
+                --color-highlight: #e94560;
+                --color-text: #d8d8d8;
+                --color-text-light: #a0a0b0;
+                --color-bg: #121218;
+                --color-card: #1a1a24;
+                --color-border: #2a2a38;
+                --color-section-bg: #1e1e2a;
+            }
+
+            .hero {
+                background: linear-gradient(135deg, #0d0d1a 0%, #162447 100%);
+            }
+
+            .nav {
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            }
+
+            .hero-contact a {
+                color: rgba(255, 255, 255, 0.85);
+            }
+
+            .tag:hover {
+                background: #2a2a3a;
+            }
+
+            .cert-card:hover {
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+            }
+
+            .about-highlight {
+                color: var(--color-accent);
+            }
+
+            .timeline-item::before {
+                background: var(--color-card);
+            }
+
+            .timeline-item:first-child::before {
+                background: var(--color-highlight);
+            }
+
+            a {
+                color: var(--color-accent);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">NL</button>
+        <img src="profile.jpg" alt="Sanvir Manilal" class="profile-photo">
+        <h1>Sanvir Manilal</h1>
+        <p class="subtitle" data-i18n="hero.subtitle">Senior Software Engineer &middot; BSc Hons Computer Science</p>
+        <div class="hero-contact">
+            <span data-i18n="hero.location">Almere Poort, Netherlands</span>
+            <span>&#8226;</span>
+            <a href="mailto:sanvir.manilal@gmail.com">sanvir.manilal@gmail.com</a>
+            <span>&#8226;</span>
+            <a href="https://www.linkedin.com/in/sanvir/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+    </header>
+
+    <!-- ===== NAV ===== -->
+    <nav class="nav" aria-label="Sections">
+        <ul>
+            <li><a href="#about" data-i18n="nav.about">About</a></li>
+            <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+            <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+            <li><a href="#certifications" data-i18n="nav.certifications">Certifications</a></li>
+            <li><a href="#education" data-i18n="nav.education">Education</a></li>
+            <li><a href="#languages" data-i18n="nav.languages">Languages</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <!-- ===== ABOUT ===== -->
+        <section id="about">
+            <h2 class="section-title" data-i18n="section.about">About</h2>
+            <div class="about-content">
+                <p data-i18n="about.p1">
+                    Hi there! I'm <span class="about-highlight">Sanvir</span>, a Software Developer living in the
+                    Netherlands with my wife and our newest little family member.
+                    I emigrated from South Africa to the Netherlands in 2019 and it's been one of the best decisions
+                    I've ever made.
+                    I have learned the local language and naturalised in these short few years.
+                </p>
+                <p data-i18n="about.p2">
+                    I am an experienced <span class="about-highlight">C# developer</span> with more than <span
+                        class="about-highlight">15 years of experience</span> and a deep knowledge of Azure, OOP, .NET
+                    Framework, .NET Core, Entity Framework, SQL, API development, and ETL.
+                </p>
+                <p data-i18n="about.p3">
+                    My colleagues know me for working effectively in a team and adhering to established schedules and
+                    deadlines. I strive to bring out the best in everyone.
+                </p>
+                <p data-i18n="about.p4">
+                    The software world keeps changing every few months and I am constantly striving for professional
+                    growth, learning new technologies, and adapting to rapidly changing technical conditions.
+                </p>
+                <p data-i18n="about.p5">
+                    Besides my professional career, I am learning how to play the piano and guitar. I also am an avid
+                    fan of gaming (not so much these days with a baby around), and grab my fix whenever I can on my
+                    Steam Deck.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== EXPERIENCE ===== -->
+        <section id="experience">
+            <h2 class="section-title" data-i18n="section.experience">Experience</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-role">Backend Lead Developer</span>
+                        <span>&mdash;</span>
+                        <span class="timeline-company">Emergo Systems BV</span>
+                    </div>
+                    <div class="timeline-meta">March 2025 &ndash; Present &middot; Harderwijk, Gelderland, Netherlands
+                    </div>
+                    <p class="timeline-desc" data-i18n="exp.emergo.desc">
+                        Responsible for architecting technical solutions for the implementation of new modules and
+                        features in the <a href="https://emergo-systems.nl/compascloud/">Compas Cloud Web
+                            Application</a>.
+                    </p>
+                    <div class="timeline-tech">
+                        <strong data-i18n="label.techstack">Tech Stack:</strong>
+                        <ul>
+                            <li>Angular</li>
+                            <li>SQL</li>
+                            <li>Message Queueing</li>
+                            <li>Web API</li>
+                            <li>C#</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-role">Senior Software Engineer and Architect</span>
+                        <span>&mdash;</span>
+                        <span class="timeline-company">ABN AMRO Bank N.V.</span>
+                    </div>
+                    <div class="timeline-meta">January 2022 &ndash; March 2025 &middot; 3 yrs 3 mos &middot; Amsterdam,
+                        Netherlands</div>
+                    <p class="timeline-desc" data-i18n="exp.abnamro.desc">
+                        Designed and refactored Assets and Liability Management (ALM) Liquidity software for Azure
+                        migration, while improving coding standards and software engineering practices.
+                        In addition I was the System Architect for my department and led bi-weekly discussions regarding
+                        Solution
+                        Architecture, governance and helped teams to translate their technical requirements to adhere to
+                        the bankwide standards.
+                        In addition I was responsible for the maintenance of a Python Application that calculated
+                        Intraday positions at ABN Amro's Nostro accounts around the world.
+                    </p>
+                    <div class="timeline-tech">
+                        <strong data-i18n="label.techstack">Tech Stack:</strong>
+                        <ul>
+                            <li>C#</li>
+                            <li>Python</li>
+                            <li>SQL</li>
+                            <li>Azure DevOps CI CD with YAML and Bicep</li>
+                            <li>Azure SQL</li>
+                            <li>Azure Virtual Machines</li>
+                            <li>Azure Key Vaults</li>
+                            <li>Azure Durable Functions</li>
+                            <li>Azure Storage</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-role">Senior Software Engineer</span>
+                        <span>&mdash;</span>
+                        <span class="timeline-company">Capgemini</span>
+                    </div>
+                    <div class="timeline-meta">August 2019 &ndash; December 2021 &middot; 2 yrs 5 mos &middot;
+                        Netherlands</div>
+                    <div class="timeline-tech">
+                        <strong data-i18n="label.techstack">Tech Stack:</strong>
+                        <ul>
+                            <li data-i18n="exp.capgemini.technote">Deployed as consultant to ABN AMRO (see above)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-role">Senior Software Engineer</span>
+                        <span>&mdash;</span>
+                        <span class="timeline-company">Entelect</span>
+                    </div>
+                    <div class="timeline-meta">May 2018 &ndash; July 2019 &middot; 1 yr 3 mos &middot; Cape Town, South
+                        Africa</div>
+                    <p class="timeline-desc" data-i18n="exp.entelect.desc">
+                        Led the team responsible for maintaining the South African equivalent of Marktplaats.nl: <a
+                            href="https://www.gumtree.co.za">Gumtree Online Marketplace</a>.
+                        Was also part of the team that built and maintained the Property Agent Portal for Colombia and
+                        Mexico, which allowed agents to upload their properties and update metadata. They were then able
+                        to publish this latest information. This is similar to funda.nl.
+                    </p>
+                    <div class="timeline-tech">
+                        <strong data-i18n="label.techstack">Tech Stack:</strong>
+                        <ul>
+                            <li>React front end</li>
+                            <li>C#</li>
+                            <li>Batch Processing background services</li>
+                            <li>SQL Server</li>
+                            <li>Razor front end</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-role">Software Developer</span>
+                        <span>&mdash;</span>
+                        <span class="timeline-company">University of Cape Town</span>
+                    </div>
+                    <div class="timeline-meta">December 2015 &ndash; April 2018 &middot; 2 yrs 5 mos &middot; Cape Town,
+                        South Africa</div>
+                    <p class="timeline-desc" data-i18n="exp.uct.desc">
+                        Developed software for the National Income Dynamics Study (NIDS) in conjunction with the
+                        Southern Africa Labour and Development Research Unit (Saldru).
+                    </p>
+                    <div class="timeline-tech">
+                        <strong data-i18n="label.techstack">Tech Stack:</strong>
+                        <ul>
+                            <li>C#</li>
+                            <li>Windows Forms</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-role">Software Engineer</span>
+                        <span>&mdash;</span>
+                        <span class="timeline-company">Korbitec</span>
+                    </div>
+                    <div class="timeline-meta">September 2013 &ndash; November 2015 &middot; 2 yrs 3 mos &middot;
+                        Newlands, Cape Town</div>
+                    <p class="timeline-desc" data-i18n="exp.korbitec.desc">
+                        Was part of a team that maintained <a href="https://www.windeed.co.za/">WinDeed</a> Which is
+                        South Africa's leading search tool for individual, company and
+                        property information. WinDeed offers a collection of easy-to-use searches, providing a single
+                        point of access to information from a variety of data sources.</p>
+                    <div class="timeline-tech">
+                        <strong data-i18n="label.techstack">Tech Stack:</strong>
+                        <ul>
+                            <li>C#</li>
+                            <li>Typescript</li>
+                            <li>SQL</li>
+                            <li>Razor Front End MVC</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-role">Intermediate .NET Software Developer</span>
+                        <span>&mdash;</span>
+                        <span class="timeline-company">Airborne Consulting / Old Mutual</span>
+                    </div>
+                    <div class="timeline-meta">October 2011 &ndash; August 2013 &middot; 1 yr 11 mos &middot; Cape Town,
+                        South Africa</div>
+                    <p class="timeline-desc" data-i18n="exp.oldmutual.desc">
+                        Part of a team responsible for developing the Long-Term-Savings Web Application for Old Mutual
+                        across South Africa, Colombia, Mexico and the UK.
+                    </p>
+                    <div class="timeline-tech">
+                        <strong data-i18n="label.techstack">Tech Stack:</strong>
+                        <ul>
+                            <li>ASP.NET</li>
+                            <li>C#</li>
+                            <li>MVC</li>
+                            <li>WCF</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <span class="timeline-role">Developer</span>
+                        <span>&mdash;</span>
+                        <span class="timeline-company">Metropolitan Health Group</span>
+                    </div>
+                    <div class="timeline-meta">January 2010 &ndash; November 2011 &middot; 1 yr 11 mos &middot; Cape
+                        Town, South Africa</div>
+                    <p class="timeline-desc" data-i18n="exp.mhg.desc">
+                        Implemented a WPF framework that served as a platform to build .NET WPF applications.
+                        Worked on an agile project to re-engineer the Medicine Risk Management system, creating the GUI
+                        for data capturers, pharmacists and other stakeholders.
+                    </p>
+                    <div class="timeline-tech">
+                        <strong data-i18n="label.techstack">Tech Stack:</strong>
+                        <ul>
+                            <li>C#</li>
+                            <li>Windows Presentation Foundation</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== SKILLS ===== -->
+        <section id="skills">
+            <h2 class="section-title" data-i18n="section.skills">Skills &amp; Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>C# Programming</h3>
+                    <div class="tags">
+                        <span class="tag">C# 14</span>
+                        <span class="tag">.NET 10</span>
+                        <span class="tag">Async / Await</span>
+                        <span class="tag">TPL</span>
+                        <span class="tag">Delegates &amp; Events</span>
+                        <span class="tag">Generics</span>
+                        <span class="tag">LINQ</span>
+                        <span class="tag">Dependency Injection</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks</h3>
+                    <div class="tags">
+                        <span class="tag">.NET</span>
+                        <span class="tag">.NET Framework</span>
+                        <span class="tag">ASP.NET MVC</span>
+                        <span class="tag">Entity Framework</span>
+                        <span class="tag">ASP.NET Core Web API</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Architecture &amp; Patterns</h3>
+                    <div class="tags">
+                        <span class="tag">Clean Architecture</span>
+                        <span class="tag">SOLID</span>
+                        <span class="tag">CQRS</span>
+                        <span class="tag">Repository Pattern</span>
+                        <span class="tag">Microservices</span>
+                        <span class="tag">Domain-Driven Design</span>
+                        <span class="tag">Event-Driven Architecture</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Database</h3>
+                    <div class="tags">
+                        <span class="tag">SQL Server</span>
+                        <span class="tag">Azure SQL</span>
+                        <span class="tag">Entity Framework</span>
+                        <span class="tag">LINQ-to-SQL</span>
+                        <span class="tag">Dapper</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud &amp; DevOps</h3>
+                    <div class="tags">
+                        <span class="tag">Microsoft Azure</span>
+                        <span class="tag">Azure Durable Functions</span>
+                        <span class="tag">Azure DevOps</span>
+                        <span class="tag">CI/CD (YAML Pipelines)</span>
+                        <span class="tag">Bicep</span>
+                        <span class="tag">Azure Service Bus</span>
+                        <span class="tag">Azure Key Vault</span>
+                        <span class="tag">Azure Storage</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Testing</h3>
+                    <div class="tags">
+                        <span class="tag">NUnit</span>
+                        <span class="tag">XUnit</span>
+                        <span class="tag">MSTest</span>
+                        <span class="tag">Moq</span>
+                        <span class="tag">FluentAssertions</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="tags">
+                        <span class="tag">Visual Studio</span>
+                        <span class="tag">Visual Studio Code</span>
+                        <span class="tag">Git</span>
+                        <span class="tag">SQL Server Management Studio</span>
+                        <span class="tag">NuGet</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Front End</h3>
+                    <div class="tags">
+                        <span class="tag">Blazor</span>
+                        <span class="tag">Angular</span>
+                        <span class="tag">React</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CERTIFICATIONS ===== -->
+        <section id="certifications">
+            <h2 class="section-title" data-i18n="section.certifications">Certifications</h2>
+            <div class="cert-list">
+                <div class="cert-card">
+                    <h3>Microsoft Certified: Azure Fundamentals AZ-900</h3>
+                    <p>Microsoft</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Developing Solutions for Microsoft Azure AZ-204</h3>
+                    <p>Microsoft</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Professional Scrum Master I</h3>
+                    <p>Scrum.org</p>
+                </div>
+                <div class="cert-card">
+                    <h3>ITIL 4 Foundation</h3>
+                    <p>AXELOS / PeopleCert</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EDUCATION ===== -->
+        <section id="education">
+            <h2 class="section-title" data-i18n="section.education">Education</h2>
+            <div class="edu-item">
+                <h3>BSc Honours in Computer Science</h3>
+                <p class="edu-school">University of Cape Town</p>
+                <p class="edu-dates">2006 &ndash; 2009</p>
+            </div>
+            <div class="edu-item">
+                <h3>Matric</h3>
+                <p class="edu-school">Marburg Secondary School</p>
+                <p class="edu-dates">2000 &ndash; 2005</p>
+            </div>
+        </section>
+
+        <!-- ===== LANGUAGES ===== -->
+        <section id="languages">
+            <h2 class="section-title" data-i18n="section.languages">Languages</h2>
+            <div class="lang-list">
+                <div class="lang-item">
+                    <span class="lang-name" data-i18n="lang.english">English</span>
+                    <span class="lang-level" data-i18n="lang.english.level">Native / Bilingual</span>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-name" data-i18n="lang.dutch">Dutch</span>
+                    <span class="lang-level" data-i18n="lang.dutch.level">Professional Working</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p>&copy; 2026 Sanvir Manilal &middot; <a href="mailto:sanvir.manilal@gmail.com">sanvir.manilal@gmail.com</a>
+            &middot; <a href="https://www.linkedin.com/in/sanvir/" target="_blank" rel="noopener">LinkedIn</a></p>
+    </footer>
+
+    <!-- ===== i18n TRANSLATION ENGINE ===== -->
+    <script>
+        (function () {
+            const translations = {
+                nl: {
+                    // Nav
+                    'nav.about': 'Over mij',
+                    'nav.experience': 'Ervaring',
+                    'nav.skills': 'Vaardigheden',
+                    'nav.certifications': 'Certificeringen',
+                    'nav.education': 'Opleiding',
+                    'nav.languages': 'Talen',
+
+                    // Hero
+                    'hero.subtitle': 'Senior Software Engineer \u00b7 BSc Hons Informatica',
+                    'hero.location': 'Almere Poort, Nederland',
+
+                    // Section titles
+                    'section.about': 'Over mij',
+                    'section.experience': 'Werkervaring',
+                    'section.skills': 'Vaardigheden & Technologie\u00ebn',
+                    'section.certifications': 'Certificeringen',
+                    'section.education': 'Opleiding',
+                    'section.languages': 'Talen',
+
+                    // About
+                    'about.p1': 'Hallo! Ik ben <span class="about-highlight">Sanvir</span>, een softwareontwikkelaar die in Nederland woont met mijn vrouw en ons nieuwste gezinslid. Ik ben in 2019 van Zuid-Afrika naar Nederland ge\u00ebmigreerd en het is een van de beste beslissingen die ik ooit heb genomen. Ik heb de lokale taal geleerd en ben in deze korte jaren genaturaliseerd.',
+                    'about.p2': 'Ik ben een ervaren <span class="about-highlight">C# ontwikkelaar</span> met meer dan <span class="about-highlight">15 jaar ervaring</span> en een diepgaande kennis van Azure, OOP, .NET Framework, .NET Core, Entity Framework, SQL, API-ontwikkeling en ETL.',
+                    'about.p3': 'Mijn collega\'s kennen mij als iemand die effectief in een team werkt en zich aan vastgestelde planningen en deadlines houdt. Ik streef ernaar om het beste in iedereen naar boven te halen.',
+                    'about.p4': 'De softwarewereld verandert elke paar maanden en ik streef voortdurend naar professionele groei, het leren van nieuwe technologie\u00ebn en het aanpassen aan snel veranderende technische omstandigheden.',
+                    'about.p5': 'Naast mijn professionele carri\u00e8re leer ik piano en gitaar spelen. Ik ben ook een fervent fan van gamen (tegenwoordig niet zo veel meer met een baby), en pak mijn momentjes wanneer ik kan op mijn Steam Deck.',
+
+                    // Experience descriptions
+                    'exp.emergo.desc': 'Verantwoordelijk voor het ontwerpen van technische oplossingen voor de implementatie van nieuwe modules en functionaliteiten in de <a href="https://emergo-systems.nl/compascloud/">Compas Cloud Web Applicatie</a>.',
+                    'exp.abnamro.desc': 'Ontworpen en gerefactored van Assets and Liability Management (ALM) Liquiditeitssoftware voor Azure-migratie, terwijl coderingsnormen en softwareontwikkelingspraktijken werden verbeterd. Daarnaast was ik de Systeemarchitect voor mijn afdeling en leidde ik tweewekelijkse discussies over Solution Architecture, governance en hielp ik teams om hun technische vereisten te vertalen naar de bankbrede standaarden. Daarnaast was ik verantwoordelijk voor het onderhoud van een Python-applicatie die Intraday-posities berekende op de Nostro-rekeningen van ABN Amro wereldwijd.',
+                    'exp.capgemini.technote': 'Ingezet als consultant bij ABN AMRO (zie hierboven)',
+                    'exp.entelect.desc': 'Leidde het team dat verantwoordelijk was voor het onderhoud van het Zuid-Afrikaanse equivalent van Marktplaats.nl: <a href="https://www.gumtree.co.za">Gumtree Online Marktplaats</a>. Was ook onderdeel van het team dat het Property Agent Portal bouwde en onderhield voor Colombia en Mexico, waarmee makelaars hun vastgoed konden uploaden en metadata konden bijwerken. Ze konden vervolgens deze laatste informatie publiceren. Dit is vergelijkbaar met funda.nl.',
+                    'exp.uct.desc': 'Ontwikkelde software voor de National Income Dynamics Study (NIDS) in samenwerking met de Southern Africa Labour and Development Research Unit (Saldru).',
+                    'exp.korbitec.desc': 'Maakte deel uit van een team dat <a href="https://www.windeed.co.za/">WinDeed</a> onderhield. WinDeed is Zuid-Afrika\'s toonaangevende zoektool voor informatie over personen, bedrijven en vastgoed. WinDeed biedt een verzameling gebruiksvriendelijke zoekopdrachten die \u00e9\u00e9n toegangspunt bieden tot informatie uit diverse databronnen.',
+                    'exp.oldmutual.desc': 'Onderdeel van een team dat verantwoordelijk was voor de ontwikkeling van de Long-Term-Savings-webapplicatie voor Old Mutual in Zuid-Afrika, Colombia, Mexico en het VK.',
+                    'exp.mhg.desc': 'Implementeerde een WPF-framework dat diende als platform voor het bouwen van .NET WPF-applicaties. Werkte aan een agile project om het Medicine Risk Management-systeem opnieuw te ontwerpen, waarbij de GUI werd gecre\u00eberd voor gegevensinvoerders, apothekers en andere belanghebbenden.',
+
+                    // Labels
+                    'label.techstack': 'Technologie\u00ebn:',
+
+                    // Languages section
+                    'lang.english': 'Engels',
+                    'lang.english.level': 'Moedertaal / Tweetalig',
+                    'lang.dutch': 'Nederlands',
+                    'lang.dutch.level': 'Professioneel werkend'
+                }
+            };
+
+            // Store original English content
+            const originals = {};
+            let currentLang = 'en';
+
+            function collectOriginals() {
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    originals[el.getAttribute('data-i18n')] = el.innerHTML;
+                });
+            }
+
+            function applyLang(lang) {
+                currentLang = lang;
+                document.documentElement.lang = lang;
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (lang === 'nl' && translations.nl[key]) {
+                        el.innerHTML = translations.nl[key];
+                    } else if (lang === 'en' && originals[key]) {
+                        el.innerHTML = originals[key];
+                    }
+                });
+                // Update toggle button text
+                const btn = document.getElementById('langToggle');
+                btn.textContent = lang === 'en' ? 'NL' : 'EN';
+                btn.setAttribute('aria-label', lang === 'en' ? 'Vertaal naar Nederlands' : 'Switch to English');
+                // Remember preference
+                try { localStorage.setItem('lang', lang); } catch (e) { }
+            }
+
+            function detectLang() {
+                // Check stored preference first
+                try {
+                    const stored = localStorage.getItem('lang');
+                    if (stored === 'en' || stored === 'nl') return stored;
+                } catch (e) { }
+                // Auto-detect browser language
+                const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+                return browserLang.startsWith('nl') ? 'nl' : 'en';
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                collectOriginals();
+                const lang = detectLang();
+                if (lang === 'nl') applyLang('nl');
+
+                document.getElementById('langToggle').addEventListener('click', function () {
+                    applyLang(currentLang === 'en' ? 'nl' : 'en');
+                });
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

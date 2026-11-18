@@ -1,0 +1,11 @@
+# Plain HTTP inside the container; TLS is terminated by the edge proxy.
+{
+	admin off
+	auto_https off
+}
+
+:8080 {
+	root * /srv
+	file_server
+	header Cache-Control "public, max-age=300"
+}

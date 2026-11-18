@@ -1,0 +1,31 @@
+# Production stack for sanvir.net. GitHub Actions copies this to
+# /opt/apps/sanvir-net on the VPS and writes IMAGE_TAG into .env next to it.
+name: sanvir-net
+
+services:
+  app:
+    image: ghcr.io/sanvirmanilal/sanvir-net:${IMAGE_TAG:-latest}
+    container_name: sanvir-net
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /config
+      - /data
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+    networks:
+      edge:
+        aliases:
+          - sanvir-net
+
+networks:
+  edge:
+    external: true

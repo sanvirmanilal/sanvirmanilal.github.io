@@ -1,0 +1,9 @@
+sanvir.net {
+	import app_defaults
+	reverse_proxy sanvir-net:8080
+}
+
+www.sanvir.net {
+	import cloudflare_origin
+	redir https://sanvir.net{uri} permanent
+}

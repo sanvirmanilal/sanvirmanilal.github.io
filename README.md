@@ -17,8 +17,10 @@ by hand from **Actions → Deploy → Run workflow**.
   `VPS_HOST`, `VPS_USER`, `VPS_SSH_KEY` and `VPS_KNOWN_HOSTS`.
 
 The VPS setup (edge proxy, `apps` user, Cloudflare) is described in
-`DEPLOY.md` in the HN-Reader repository. GitHub Pages (`CNAME`, `_config.yml`)
-still publishes the same files as a fallback until it is switched off.
+`DEPLOY.md` in the HN-Reader repository. GitHub Pages cannot be switched off
+for a `<user>.github.io` repository, so it still publishes the same files at
+<https://sanvirmanilal.github.io>, but no longer claims the `sanvir.net`
+domain. Don't add a `CNAME` file back.
 
 Roll back to an earlier commit's image, as `apps` on the VPS:
 
